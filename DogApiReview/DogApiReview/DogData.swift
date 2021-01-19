@@ -11,3 +11,8 @@ struct Dogs : Codable {
     let message: [String: [String]]
     let status: String
 }
+
+
+struct DogImages : Codable {
+    let message: [String]
+}
