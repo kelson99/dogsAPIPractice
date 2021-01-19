@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		50DFABFD25B75523009BB473 /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFABFC25B75523009BB473 /* SearchCollectionViewController.swift */; };
+		50DFAC0325B7A5A8009BB473 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFAC0225B7A5A8009BB473 /* PhotoDetailViewController.swift */; };
 		50EC2B7725B6049200519EED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EC2B7625B6049200519EED /* AppDelegate.swift */; };
 		50EC2B7925B6049200519EED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EC2B7825B6049200519EED /* SceneDelegate.swift */; };
 		50EC2B7B25B6049200519EED /* DogsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EC2B7A25B6049200519EED /* DogsCollectionViewController.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		50DFABFC25B75523009BB473 /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
+		50DFAC0225B7A5A8009BB473 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		50EC2B7325B6049200519EED /* DogApiReview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogApiReview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50EC2B7625B6049200519EED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50EC2B7825B6049200519EED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +53,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50DFAC0525B7A5B1009BB473 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				50DFABFC25B75523009BB473 /* SearchCollectionViewController.swift */,
+				50EC2B7A25B6049200519EED /* DogsCollectionViewController.swift */,
+				50DFAC0225B7A5A8009BB473 /* PhotoDetailViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		50DFAC0825B7A5E8009BB473 /* LifeCycle */ = {
+			isa = PBXGroup;
+			children = (
+				50EC2B7825B6049200519EED /* SceneDelegate.swift */,
+				50EC2B7625B6049200519EED /* AppDelegate.swift */,
+			);
+			path = LifeCycle;
+			sourceTree = "<group>";
+		};
+		50DFAC0A25B7A60C009BB473 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				50EC2B9125B6508200519EED /* ConcurrentOperation.swift */,
+				50EC2B9625B6590C00519EED /* FetchPhotoOperation.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
 		50EC2B6A25B6049200519EED = {
 			isa = PBXGroup;
 			children = (
@@ -68,9 +100,7 @@
 		50EC2B7525B6049200519EED /* DogApiReview */ = {
 			isa = PBXGroup;
 			children = (
-				50EC2B7625B6049200519EED /* AppDelegate.swift */,
-				50EC2B7825B6049200519EED /* SceneDelegate.swift */,
-				50EC2B7A25B6049200519EED /* DogsCollectionViewController.swift */,
+				50DFAC0825B7A5E8009BB473 /* LifeCycle */,
 				50EC2B7C25B6049300519EED /* Main.storyboard */,
 				50EC2B7F25B6049900519EED /* Assets.xcassets */,
 				50EC2BA025B6970D00519EED /* Skull.png */,
@@ -78,9 +108,9 @@
 				50EC2B8425B6049900519EED /* Info.plist */,
 				50EC2B8B25B611BF00519EED /* DogData.swift */,
 				50EC2B8E25B6187100519EED /* DogModelController.swift */,
-				50EC2B9125B6508200519EED /* ConcurrentOperation.swift */,
-				50EC2B9625B6590C00519EED /* FetchPhotoOperation.swift */,
+				50DFAC0A25B7A60C009BB473 /* Operations */,
 				50EC2B9D25B6945F00519EED /* DogReusableCollectionViewCell.swift */,
+				50DFAC0525B7A5B1009BB473 /* ViewControllers */,
 			);
 			path = DogApiReview;
 			sourceTree = "<group>";
@@ -160,9 +190,11 @@
 				50EC2B7B25B6049200519EED /* DogsCollectionViewController.swift in Sources */,
 				50EC2B9E25B6945F00519EED /* DogReusableCollectionViewCell.swift in Sources */,
 				50EC2B8F25B6187100519EED /* DogModelController.swift in Sources */,
+				50DFAC0325B7A5A8009BB473 /* PhotoDetailViewController.swift in Sources */,
 				50EC2B7725B6049200519EED /* AppDelegate.swift in Sources */,
 				50EC2B9725B6590C00519EED /* FetchPhotoOperation.swift in Sources */,
 				50EC2B9225B6508300519EED /* ConcurrentOperation.swift in Sources */,
+				50DFABFD25B75523009BB473 /* SearchCollectionViewController.swift in Sources */,
 				50EC2B7925B6049200519EED /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

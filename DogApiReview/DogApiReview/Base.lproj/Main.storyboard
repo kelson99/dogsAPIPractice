@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L9q-mI-jIz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qUa-gj-dmo">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Dogs Collection View Controller-->
+        <!--Main-->
         <scene sceneID="60a-zt-fKG">
             <objects>
                 <viewController id="L9q-mI-jIz" customClass="DogsCollectionViewController" customModule="DogApiReview" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zwQ-ot-Qyd">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qO1-pg-BXT">
                                     <size key="itemSize" width="150" height="150"/>
@@ -60,17 +60,125 @@
                             <constraint firstItem="zwQ-ot-Qyd" firstAttribute="trailing" secondItem="E6I-EO-Vnc" secondAttribute="trailing" id="taE-WF-afb"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Main" image="circle.grid.2x2" catalog="system" id="0JK-xr-3iX"/>
+                    <navigationItem key="navigationItem" title="Main" id="kOs-ch-kip"/>
                     <connections>
                         <outlet property="collectionView" destination="zwQ-ot-Qyd" id="bw5-cl-QVK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b7o-CB-kEv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-159.42028985507247" y="776.78571428571422"/>
+            <point key="canvasLocation" x="-191" y="1491"/>
+        </scene>
+        <!--Explore-->
+        <scene sceneID="pOE-sn-yrY">
+            <objects>
+                <viewController id="bl1-KQ-CZh" customClass="SearchCollectionViewController" customModule="DogApiReview" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sQa-Ls-jxV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search For a dog here" translatesAutoresizingMaskIntoConstraints="NO" id="eTn-MC-7UC">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YCz-X6-IZb">
+                                <rect key="frame" x="0.0" y="100" width="414" height="713"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="v9z-FP-gZe">
+                                    <size key="itemSize" width="150" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="Gw2-k3-P9U" customClass="DogReusableCollectionViewCell" customModule="DogApiReview" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MarsPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="Uv8-BT-CJT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Uv8-BT-CJT" secondAttribute="bottom" id="UKn-gs-CcG"/>
+                                            <constraint firstItem="Uv8-BT-CJT" firstAttribute="top" secondItem="Gw2-k3-P9U" secondAttribute="top" id="WWm-eu-t6l"/>
+                                            <constraint firstAttribute="trailing" secondItem="Uv8-BT-CJT" secondAttribute="trailing" id="bN8-Hb-A5K"/>
+                                            <constraint firstItem="Uv8-BT-CJT" firstAttribute="leading" secondItem="Gw2-k3-P9U" secondAttribute="leading" id="ehG-k1-svR"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="Uv8-BT-CJT" id="k6t-Vf-Ryn"/>
+                                            <segue destination="Xhb-BX-t9j" kind="show" identifier="Test" id="ExP-MA-naL"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Let-c1-5KS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YCz-X6-IZb" firstAttribute="trailing" secondItem="Let-c1-5KS" secondAttribute="trailing" id="OlP-OG-Jm1"/>
+                            <constraint firstItem="YCz-X6-IZb" firstAttribute="top" secondItem="eTn-MC-7UC" secondAttribute="bottom" id="QFS-Fg-45s"/>
+                            <constraint firstItem="YCz-X6-IZb" firstAttribute="leading" secondItem="Let-c1-5KS" secondAttribute="leading" id="QQg-VT-LtH"/>
+                            <constraint firstItem="eTn-MC-7UC" firstAttribute="trailing" secondItem="Let-c1-5KS" secondAttribute="trailing" id="RTG-M6-ijf"/>
+                            <constraint firstItem="eTn-MC-7UC" firstAttribute="top" secondItem="Let-c1-5KS" secondAttribute="top" id="eVn-O4-KER"/>
+                            <constraint firstItem="YCz-X6-IZb" firstAttribute="bottom" secondItem="Let-c1-5KS" secondAttribute="bottom" id="qk1-wm-Ohb"/>
+                            <constraint firstItem="eTn-MC-7UC" firstAttribute="leading" secondItem="Let-c1-5KS" secondAttribute="leading" id="yfu-PN-J2g"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Explore" image="magnifyingglass" catalog="system" id="eTb-3z-b3F"/>
+                    <connections>
+                        <outlet property="collectionView" destination="YCz-X6-IZb" id="26v-zI-QcQ"/>
+                        <outlet property="searchBar" destination="eTn-MC-7UC" id="PJL-UU-oNS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CCB-O4-Sj0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="621.73913043478262" y="1490.625"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Fyp-Hp-xdG">
+            <objects>
+                <viewController id="Xhb-BX-t9j" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ySJ-Sr-MqL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="MrD-71-pgM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Kis-7f-jcr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bK8-G5-BLN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="271" y="2178"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="pog-j6-eNi">
+            <objects>
+                <tabBarController id="qUa-gj-dmo" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fRK-4V-Vil">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="L9q-mI-jIz" kind="relationship" relationship="viewControllers" id="hPA-mC-euC"/>
+                        <segue destination="bl1-KQ-CZh" kind="relationship" relationship="viewControllers" id="bkQ-YR-bDd"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bQF-Mk-DgG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-190" y="777"/>
         </scene>
     </scenes>
     <resources>
         <image name="MarsPlaceholder" width="450" height="450"/>
+        <image name="circle.grid.2x2" catalog="system" width="128" height="112"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

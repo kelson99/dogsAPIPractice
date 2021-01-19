@@ -16,6 +16,14 @@ class DogModelController {
         }
     }
     
+    func fetchRandomDogImages(numberOf photos: Int, using session: URLSession = URLSession.shared, completion: @escaping (DogImages?, Error?) -> Void) {
+        
+        let url = self.url(forRandomDogImages: photos)
+        fetch(from: url) { (arr: DogImages?, error: Error?) in
+            completion(arr, nil)
+        }
+    }
+    
     
     private func fetch<T: Codable>(from url: URL,
                                    using session: URLSession = URLSession.shared,
