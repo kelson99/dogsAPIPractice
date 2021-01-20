@@ -10,11 +10,13 @@ import UIKit
 class PhotoDetailViewController: UIViewController {
     
     var dog: DogToBeSaved?
+    var controller: DogModelController?
     
     
     private let borderColor = UIColor(hue: 208/360.0, saturation: 80/100.0, brightness: 94/100.0, alpha: 1)
     private let dogImage = UIImageView()
     private let dogBreedLabel = UILabel()
+    private let saveButton = UIButton()
     
     
     
@@ -57,8 +59,31 @@ class PhotoDetailViewController: UIViewController {
             dogBreedLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
         
+        view.addSubview(saveButton)
+        saveButton.translatesAutoresizingMaskIntoConstraints = false
+        saveButton.setTitle("Save", for: .normal)
+        saveButton.setTitleColor(.black, for: .normal)
+        saveButton.backgroundColor = .green
+        saveButton.layer.cornerRadius = 4
+        saveButton.addTarget(self, action: #selector(saveDog), for: .touchUpInside)
+        
+        NSLayoutConstraint.activate([
+            saveButton.topAnchor.constraint(equalTo: dogBreedLabel.bottomAnchor, constant: 20),
+            saveButton.leadingAnchor.constraint(equalTo: dogBreedLabel.leadingAnchor),
+            saveButton.trailingAnchor.constraint(equalTo: dogBreedLabel.trailingAnchor)
+        ])
     }
     
+    
+    @objc func saveDog() {
+        guard let dog = dog, isViewLoaded else { return }
+        do {
+            let data = try Data(contentsOf: dog.imageURL)
+            controller?.createDogToBeSaved(breed: dog.breed, dogPhoto: data)
+        } catch {
+            NSLog("Error setting up views on detail view controller: \(error)")
+        }
+    }
     
     
 

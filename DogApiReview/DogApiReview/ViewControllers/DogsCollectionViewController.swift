@@ -118,15 +118,15 @@ extension DogsCollectionViewController {
                 let newDog = DogToBeSaved(imageURL: URL(string: selectedItem)!, breed: dogBreed)
                 
                 imageDetailVc.dog = newDog
+                imageDetailVc.controller = self.controller
             }
         }
     }
     
     func detectDogBreed(dogUrl: String) -> String {
         let array = dogUrl.components(separatedBy: "/")
-        print(dogUrl)
-        print(array)
+        let dogBreed = array[4]
         
-        return array[4]
+        return dogBreed
     }
 }

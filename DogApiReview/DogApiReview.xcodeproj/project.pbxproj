@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		50DFABFD25B75523009BB473 /* SearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFABFC25B75523009BB473 /* SearchCollectionViewController.swift */; };
 		50DFAC0325B7A5A8009BB473 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFAC0225B7A5A8009BB473 /* PhotoDetailViewController.swift */; };
+		50DFAC1025B7EAD0009BB473 /* FavoritesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFAC0F25B7EAD0009BB473 /* FavoritesCollectionViewController.swift */; };
+		50DFAC1425B8AB8C009BB473 /* DogApiReview.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50DFAC1225B8AB8C009BB473 /* DogApiReview.xcdatamodeld */; };
+		50DFAC1725B8ABE1009BB473 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFAC1625B8ABE1009BB473 /* CoreDataStack.swift */; };
+		50DFAC1A25B8AD7E009BB473 /* SavedDog+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFAC1925B8AD7E009BB473 /* SavedDog+Convenience.swift */; };
+		50DFAC2025B8EB15009BB473 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DFAC1F25B8EB15009BB473 /* ProfileViewController.swift */; };
 		50EC2B7725B6049200519EED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EC2B7625B6049200519EED /* AppDelegate.swift */; };
 		50EC2B7925B6049200519EED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EC2B7825B6049200519EED /* SceneDelegate.swift */; };
 		50EC2B7B25B6049200519EED /* DogsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EC2B7A25B6049200519EED /* DogsCollectionViewController.swift */; };
@@ -26,6 +31,11 @@
 /* Begin PBXFileReference section */
 		50DFABFC25B75523009BB473 /* SearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewController.swift; sourceTree = "<group>"; };
 		50DFAC0225B7A5A8009BB473 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		50DFAC0F25B7EAD0009BB473 /* FavoritesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewController.swift; sourceTree = "<group>"; };
+		50DFAC1325B8AB8C009BB473 /* DogApiReview.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DogApiReview.xcdatamodel; sourceTree = "<group>"; };
+		50DFAC1625B8ABE1009BB473 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		50DFAC1925B8AD7E009BB473 /* SavedDog+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedDog+Convenience.swift"; sourceTree = "<group>"; };
+		50DFAC1F25B8EB15009BB473 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		50EC2B7325B6049200519EED /* DogApiReview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogApiReview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50EC2B7625B6049200519EED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50EC2B7825B6049200519EED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +69,8 @@
 				50DFABFC25B75523009BB473 /* SearchCollectionViewController.swift */,
 				50EC2B7A25B6049200519EED /* DogsCollectionViewController.swift */,
 				50DFAC0225B7A5A8009BB473 /* PhotoDetailViewController.swift */,
+				50DFAC0F25B7EAD0009BB473 /* FavoritesCollectionViewController.swift */,
+				50DFAC1F25B8EB15009BB473 /* ProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -111,6 +123,9 @@
 				50DFAC0A25B7A60C009BB473 /* Operations */,
 				50EC2B9D25B6945F00519EED /* DogReusableCollectionViewCell.swift */,
 				50DFAC0525B7A5B1009BB473 /* ViewControllers */,
+				50DFAC1225B8AB8C009BB473 /* DogApiReview.xcdatamodeld */,
+				50DFAC1625B8ABE1009BB473 /* CoreDataStack.swift */,
+				50DFAC1925B8AD7E009BB473 /* SavedDog+Convenience.swift */,
 			);
 			path = DogApiReview;
 			sourceTree = "<group>";
@@ -186,16 +201,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50DFAC1A25B8AD7E009BB473 /* SavedDog+Convenience.swift in Sources */,
 				50EC2B8C25B611BF00519EED /* DogData.swift in Sources */,
+				50DFAC1025B7EAD0009BB473 /* FavoritesCollectionViewController.swift in Sources */,
 				50EC2B7B25B6049200519EED /* DogsCollectionViewController.swift in Sources */,
 				50EC2B9E25B6945F00519EED /* DogReusableCollectionViewCell.swift in Sources */,
 				50EC2B8F25B6187100519EED /* DogModelController.swift in Sources */,
 				50DFAC0325B7A5A8009BB473 /* PhotoDetailViewController.swift in Sources */,
+				50DFAC1725B8ABE1009BB473 /* CoreDataStack.swift in Sources */,
 				50EC2B7725B6049200519EED /* AppDelegate.swift in Sources */,
 				50EC2B9725B6590C00519EED /* FetchPhotoOperation.swift in Sources */,
 				50EC2B9225B6508300519EED /* ConcurrentOperation.swift in Sources */,
 				50DFABFD25B75523009BB473 /* SearchCollectionViewController.swift in Sources */,
+				50DFAC2025B8EB15009BB473 /* ProfileViewController.swift in Sources */,
 				50EC2B7925B6049200519EED /* SceneDelegate.swift in Sources */,
+				50DFAC1425B8AB8C009BB473 /* DogApiReview.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +417,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		50DFAC1225B8AB8C009BB473 /* DogApiReview.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				50DFAC1325B8AB8C009BB473 /* DogApiReview.xcdatamodel */,
+			);
+			currentVersion = 50DFAC1325B8AB8C009BB473 /* DogApiReview.xcdatamodel */;
+			path = DogApiReview.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 50EC2B6B25B6049200519EED /* Project object */;
 }

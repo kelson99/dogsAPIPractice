@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 class DogModelController {
     
@@ -50,6 +51,14 @@ class DogModelController {
                                    }.resume()
     
     
+    }
+    
+    
+    @discardableResult func createDogToBeSaved(breed: String, dogPhoto: Data?) -> SavedDog {
+        let newDog = SavedDog(breed: breed, dogPhoto: dogPhoto, context: CoreDataStack.shared.mainContext)
+        CoreDataStack.shared.saveToPersistentStore()
+        
+        return newDog
     }
     
     

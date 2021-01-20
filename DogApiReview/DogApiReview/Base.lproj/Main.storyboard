@@ -141,21 +141,92 @@
             </objects>
             <point key="canvasLocation" x="621.73913043478262" y="1490.625"/>
         </scene>
-        <!--Item-->
+        <!--Favorites-->
         <scene sceneID="UN0-tG-lUg">
             <objects>
-                <viewController id="oEH-Ic-2JH" sceneMemberID="viewController">
+                <viewController id="oEH-Ic-2JH" customClass="FavoritesCollectionViewController" customModule="DogApiReview" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uRz-OQ-k32">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="w6j-OL-P6a">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="By5-y9-bSQ">
+                                    <size key="itemSize" width="150" height="150"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCell" id="va4-Lx-EVl" customClass="DogReusableCollectionViewCell" customModule="DogApiReview" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MarsPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="NJb-dJ-A9v">
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="NJb-dJ-A9v" secondAttribute="trailing" id="F06-oz-NAg"/>
+                                            <constraint firstAttribute="bottom" secondItem="NJb-dJ-A9v" secondAttribute="bottom" id="MhL-rY-hI6"/>
+                                            <constraint firstItem="NJb-dJ-A9v" firstAttribute="top" secondItem="va4-Lx-EVl" secondAttribute="top" id="d2v-bd-R4p"/>
+                                            <constraint firstItem="NJb-dJ-A9v" firstAttribute="leading" secondItem="va4-Lx-EVl" secondAttribute="leading" id="u2W-ye-8kD"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="NJb-dJ-A9v" id="9lh-4F-GbQ"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <navigationBar contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0F0-Kh-h7g">
+                                <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                                <color key="barTintColor" red="0.039215686274509803" green="0.71372549019607845" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <navigationItem title="Favorites" id="umn-1b-g6T"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="uNQ-tB-ClO"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.039215686274509803" green="0.71372549019607845" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="w6j-OL-P6a" firstAttribute="leading" secondItem="uNQ-tB-ClO" secondAttribute="leading" id="4ko-TP-bQ7"/>
+                            <constraint firstItem="w6j-OL-P6a" firstAttribute="top" secondItem="0F0-Kh-h7g" secondAttribute="bottom" id="Etc-Xh-V1M"/>
+                            <constraint firstItem="w6j-OL-P6a" firstAttribute="trailing" secondItem="uNQ-tB-ClO" secondAttribute="trailing" id="FW0-K3-p9Z"/>
+                            <constraint firstItem="0F0-Kh-h7g" firstAttribute="top" secondItem="uNQ-tB-ClO" secondAttribute="top" id="SNF-jw-YDX"/>
+                            <constraint firstItem="w6j-OL-P6a" firstAttribute="bottom" secondItem="uNQ-tB-ClO" secondAttribute="bottom" id="cg3-6Q-KcK"/>
+                            <constraint firstItem="0F0-Kh-h7g" firstAttribute="trailing" secondItem="uNQ-tB-ClO" secondAttribute="trailing" id="hlR-BZ-val"/>
+                            <constraint firstItem="0F0-Kh-h7g" firstAttribute="leading" secondItem="uNQ-tB-ClO" secondAttribute="leading" id="zS8-gB-vx7"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Qoi-po-FM7"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="star.fill" catalog="system" id="Qoi-po-FM7"/>
+                    <connections>
+                        <outlet property="collectionView" destination="w6j-OL-P6a" id="d2Z-Vt-Msz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tnM-3o-gwX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1493" y="1491"/>
+            <point key="canvasLocation" x="1412" y="1491"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="DFS-nu-bf2">
+            <objects>
+                <viewController id="Nfc-4C-egw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LKO-S7-9TL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="bRk-NJ-cgO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="1wZ-sZ-0vl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kr8-MN-BC5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2219" y="1491"/>
         </scene>
         <!--Photo Detail View Controller-->
         <scene sceneID="Fyp-Hp-xdG">
@@ -186,6 +257,7 @@
                         <segue destination="L9q-mI-jIz" kind="relationship" relationship="viewControllers" id="hPA-mC-euC"/>
                         <segue destination="bl1-KQ-CZh" kind="relationship" relationship="viewControllers" id="bkQ-YR-bDd"/>
                         <segue destination="oEH-Ic-2JH" kind="relationship" relationship="viewControllers" id="eyJ-YG-Jdb"/>
+                        <segue destination="Nfc-4C-egw" kind="relationship" relationship="viewControllers" id="uDE-d6-l6Z"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bQF-Mk-DgG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -200,6 +272,7 @@
         <image name="MarsPlaceholder" width="450" height="450"/>
         <image name="circle.grid.2x2" catalog="system" width="128" height="112"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
