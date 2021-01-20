@@ -8,12 +8,58 @@
 import UIKit
 
 class PhotoDetailViewController: UIViewController {
-
+    
+    var dog: DogToBeSaved?
+    
+    
+    private let borderColor = UIColor(hue: 208/360.0, saturation: 80/100.0, brightness: 94/100.0, alpha: 1)
+    private let dogImage = UIImageView()
+    private let dogBreedLabel = UILabel()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        guard let dog = dog, isViewLoaded else { return }
+        do {
+            let data = try Data(contentsOf: dog.imageURL)
+            dogImage.image = UIImage(data: data)
+        } catch {
+            NSLog("Error setting up views on detail view controller: \(error)")
+        }
+        setUpSubViews()
     }
+    
+    
+    
+    private func setUpSubViews() {
+        view.addSubview(dogImage)
+        dogImage.translatesAutoresizingMaskIntoConstraints = false
+        dogImage.contentMode = .scaleAspectFit
+        dogImage.layer.borderWidth = 3
+        dogImage.layer.borderColor = UIColor.blue.cgColor
+        
+        NSLayoutConstraint.activate([
+            dogImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            dogImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+            dogImage.widthAnchor.constraint(equalToConstant: 400),
+            dogImage.heightAnchor.constraint(equalToConstant: 300)
+        ])
+        
+        view.addSubview(dogBreedLabel)
+        dogBreedLabel.translatesAutoresizingMaskIntoConstraints = false
+        dogBreedLabel.text = "Breed: \(dog?.breed.capitalized ?? "Unknown")"
+        dogBreedLabel.font = UIFont(name: "Bradley Hand Bold", size: 30)
+        
+        NSLayoutConstraint.activate([
+            dogBreedLabel.topAnchor.constraint(equalTo: dogImage.bottomAnchor, constant: 20),
+            dogBreedLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        ])
+        
+    }
+    
+    
     
 
     /*

@@ -105,23 +105,23 @@ class SearchCollectionViewController: UIViewController, UICollectionViewDataSour
     }
     
     
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-        switch segue.identifier {
-        case "":
-            print("")
-            
-        default:
-            print("")
-            
-            
-            
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let imageDetailVc = segue.destination as? PhotoDetailViewController else { return }
+        if segue.identifier == "ShowDetailTwo" {
+            if let indexPath = self.collectionView.indexPathsForSelectedItems?.first {
+                let selectedItem = images[indexPath.item]
+                
+                let dogBreed = detectDogBreed(dogUrl: selectedItem)
+                
+                let newDog = DogToBeSaved(imageURL: URL(string: selectedItem)!, breed: dogBreed)
+                
+                imageDetailVc.dog = newDog
+            }
         }
-     }
+    }
 }
 
 extension SearchCollectionViewController : UISearchBarDelegate {
@@ -139,5 +139,13 @@ extension SearchCollectionViewController : UISearchBarDelegate {
             }
         }
         view.endEditing(true)
+    }
+    
+    func detectDogBreed(dogUrl: String) -> String {
+        let array = dogUrl.components(separatedBy: "/")
+        print(dogUrl)
+        print(array)
+        
+        return array[4]
     }
 }

@@ -94,6 +94,7 @@ class DogsCollectionViewController: UIViewController, UICollectionViewDataSource
         let completionOP = BlockOperation {
             if let data = fetchOp.imageData {
                 cell.imageView.image = UIImage(data: data)
+                cell.imageView.contentMode = .scaleAspectFit
             }
         }
         
@@ -105,3 +106,27 @@ class DogsCollectionViewController: UIViewController, UICollectionViewDataSource
     }
 }
 
+extension DogsCollectionViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let imageDetailVc = segue.destination as? PhotoDetailViewController else { return }
+        if segue.identifier == "ShowDetail" {
+            if let indexPath = self.collectionView.indexPathsForSelectedItems?.first {
+                let selectedItem = images[indexPath.item]
+                
+                let dogBreed = detectDogBreed(dogUrl: selectedItem)
+                
+                let newDog = DogToBeSaved(imageURL: URL(string: selectedItem)!, breed: dogBreed)
+                
+                imageDetailVc.dog = newDog
+            }
+        }
+    }
+    
+    func detectDogBreed(dogUrl: String) -> String {
+        let array = dogUrl.components(separatedBy: "/")
+        print(dogUrl)
+        print(array)
+        
+        return array[4]
+    }
+}

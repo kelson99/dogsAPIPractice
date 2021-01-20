@@ -16,3 +16,8 @@ struct Dogs : Codable {
 struct DogImages : Codable {
     let message: [String]
 }
+
+struct DogToBeSaved {
+    let imageURL: URL
+    let breed: String
+}

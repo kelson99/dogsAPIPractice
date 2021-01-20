@@ -46,13 +46,14 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="IVx-v8-oqB" id="A1h-Qi-5UA"/>
+                                            <segue destination="Xhb-BX-t9j" kind="show" identifier="ShowDetail" id="eyU-o0-LH2"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="E6I-EO-Vnc"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.031372549019607843" green="0.71372549019607845" blue="0.80784313725490198" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="zwQ-ot-Qyd" firstAttribute="top" secondItem="Jgj-X8-jCk" secondAttribute="top" id="7e1-Hc-Lqz"/>
                             <constraint firstItem="zwQ-ot-Qyd" firstAttribute="bottom" secondItem="E6I-EO-Vnc" secondAttribute="bottom" id="BMp-Wp-dX5"/>
@@ -112,14 +113,14 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="Uv8-BT-CJT" id="k6t-Vf-Ryn"/>
-                                            <segue destination="Xhb-BX-t9j" kind="show" identifier="Test" id="ExP-MA-naL"/>
+                                            <segue destination="Xhb-BX-t9j" kind="show" identifier="ShowDetailTwo" id="ExP-MA-naL"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Let-c1-5KS"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.031372549019607843" green="0.71372549019607845" blue="0.80784313725490198" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="YCz-X6-IZb" firstAttribute="trailing" secondItem="Let-c1-5KS" secondAttribute="trailing" id="OlP-OG-Jm1"/>
                             <constraint firstItem="YCz-X6-IZb" firstAttribute="top" secondItem="eTn-MC-7UC" secondAttribute="bottom" id="QFS-Fg-45s"/>
@@ -140,21 +141,37 @@
             </objects>
             <point key="canvasLocation" x="621.73913043478262" y="1490.625"/>
         </scene>
-        <!--View Controller-->
+        <!--Item-->
+        <scene sceneID="UN0-tG-lUg">
+            <objects>
+                <viewController id="oEH-Ic-2JH" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uRz-OQ-k32">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="uNQ-tB-ClO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Qoi-po-FM7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tnM-3o-gwX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1493" y="1491"/>
+        </scene>
+        <!--Photo Detail View Controller-->
         <scene sceneID="Fyp-Hp-xdG">
             <objects>
-                <viewController id="Xhb-BX-t9j" sceneMemberID="viewController">
+                <viewController id="Xhb-BX-t9j" customClass="PhotoDetailViewController" customModule="DogApiReview" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ySJ-Sr-MqL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="MrD-71-pgM"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.031372549019607843" green="0.71372549019607845" blue="0.80784313725490198" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Kis-7f-jcr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bK8-G5-BLN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="271" y="2178"/>
+            <point key="canvasLocation" x="272" y="2218"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="pog-j6-eNi">
@@ -168,6 +185,7 @@
                     <connections>
                         <segue destination="L9q-mI-jIz" kind="relationship" relationship="viewControllers" id="hPA-mC-euC"/>
                         <segue destination="bl1-KQ-CZh" kind="relationship" relationship="viewControllers" id="bkQ-YR-bDd"/>
+                        <segue destination="oEH-Ic-2JH" kind="relationship" relationship="viewControllers" id="eyJ-YG-Jdb"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bQF-Mk-DgG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -175,6 +193,9 @@
             <point key="canvasLocation" x="-190" y="777"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ExP-MA-naL"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="MarsPlaceholder" width="450" height="450"/>
         <image name="circle.grid.2x2" catalog="system" width="128" height="112"/>
