@@ -7,10 +7,15 @@
 
 import UIKit
 
+protocol didSaveDog {
+    func didSaveDog()
+}
+
 class PhotoDetailViewController: UIViewController {
     
     var dog: DogToBeSaved?
     var controller: DogModelController?
+    var delegate: didSaveDog?
     
     
     private let borderColor = UIColor(hue: 208/360.0, saturation: 80/100.0, brightness: 94/100.0, alpha: 1)
@@ -83,6 +88,9 @@ class PhotoDetailViewController: UIViewController {
         } catch {
             NSLog("Error setting up views on detail view controller: \(error)")
         }
+        
+        // triggering our delegate method
+        delegate?.didSaveDog()
     }
     
     

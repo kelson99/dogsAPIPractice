@@ -7,7 +7,8 @@
 
 import UIKit
 
-class SearchCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class SearchCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, didSaveDog {
+    
     
     var images = [String]() {
         didSet {
@@ -119,6 +120,8 @@ class SearchCollectionViewController: UIViewController, UICollectionViewDataSour
                 let newDog = DogToBeSaved(imageURL: URL(string: selectedItem)!, breed: dogBreed)
                 
                 imageDetailVc.dog = newDog
+                
+                imageDetailVc.delegate = self
             }
         }
     }
@@ -147,5 +150,14 @@ extension SearchCollectionViewController : UISearchBarDelegate {
         print(array)
         
         return array[4]
+    }
+}
+
+extension SearchCollectionViewController {
+    func didSaveDog() {
+        
+        // this will dissmiss that view controller
+        dismiss(animated: true, completion: nil)
+        
     }
 }

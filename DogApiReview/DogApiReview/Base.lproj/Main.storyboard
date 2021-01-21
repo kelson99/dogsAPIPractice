@@ -212,21 +212,50 @@
             </objects>
             <point key="canvasLocation" x="1412" y="1491"/>
         </scene>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="DFS-nu-bf2">
             <objects>
-                <viewController id="Nfc-4C-egw" sceneMemberID="viewController">
+                <viewController id="Nfc-4C-egw" customClass="ProfileViewController" customModule="DogApiReview" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LKO-S7-9TL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bxa-MJ-0Kz" customClass="PieChart" customModule="PieCharts">
+                                <rect key="frame" x="0.0" y="286" width="414" height="324"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="innerRadius">
+                                        <real key="value" value="70"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="outerRadius">
+                                        <real key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="selectedOffset">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="animDuration">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="bRk-NJ-cgO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Bxa-MJ-0Kz" firstAttribute="top" secondItem="bRk-NJ-cgO" secondAttribute="top" constant="242" id="LQn-Fy-s1e"/>
+                            <constraint firstItem="Bxa-MJ-0Kz" firstAttribute="centerY" secondItem="LKO-S7-9TL" secondAttribute="centerY" id="NFJ-au-in1"/>
+                            <constraint firstItem="Bxa-MJ-0Kz" firstAttribute="trailing" secondItem="bRk-NJ-cgO" secondAttribute="trailing" id="RWQ-uP-dhI"/>
+                            <constraint firstItem="Bxa-MJ-0Kz" firstAttribute="leading" secondItem="bRk-NJ-cgO" secondAttribute="leading" id="yeI-gD-Psn"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="1wZ-sZ-0vl"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="1wZ-sZ-0vl"/>
+                    <connections>
+                        <outlet property="chartView" destination="Bxa-MJ-0Kz" id="oaB-Yy-QEq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kr8-MN-BC5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2219" y="1491"/>
+            <point key="canvasLocation" x="2218.840579710145" y="1490.625"/>
         </scene>
         <!--Photo Detail View Controller-->
         <scene sceneID="Fyp-Hp-xdG">
@@ -272,6 +301,7 @@
         <image name="MarsPlaceholder" width="450" height="450"/>
         <image name="circle.grid.2x2" catalog="system" width="128" height="112"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="person" catalog="system" width="128" height="117"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
